@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire Amélioré HTML5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1em;
+      background-color: #f5f5f5;
+    }
+
+    header, main, footer {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 1em;
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+    }
+
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+
+    th, td {
+      padding: 0.5em;
+      text-align: left;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 1em;
+    }
+
+    input, select, textarea {
+      padding: 0.5em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    fieldset {
+      margin-top: 1em;
+      padding: 1em;
+      border: 1px solid #bbb;
+    }
+
+    button {
+      margin-top: 1.5em;
+      padding: 0.7em;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .tooltip {
+      font-size: 0.85em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Inscription à l'événement numérique 2025</h1>
+    <p>Bienvenue sur notre plateforme d'inscription. Veuillez lire les informations ci-dessous avant de remplir le formulaire.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📌 Thèmes abordés</h2>
+      <ul>
+        <li>Accessibilité Web</li>
+        <li>Formulaires HTML5 intelligents</li>
+        <li>Intégration audio/vidéo dans les pages modernes</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📊 Programme du jour</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Heure</th>
+            <th>Activité</th>
+            <th>Orateur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td>Accueil & Présentation</td>
+            <td>Julie T.</td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>Les formulaires du futur</td>
+            <td>Marc N.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>🎥 Vidéo de présentation</h2>
+      <video controls width="100%">
+        <source src="video-presentation.mp4" type="video/mp4">
+        Votre navigateur ne prend pas en charge la vidéo.
+      </video>
+    </section>
+
+    <section>
+      <h2>📝 Formulaire d'inscription</h2>
+      <form action="#" method="post">
+        <label for="fullname">Nom complet *</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Jean Dupont" required minlength="3" autocomplete="name" />
+
+        <label for="email">Adresse e-mail *</label>
+        <input type="email" id="email" name="email" placeholder="exemple@email.com" required autocomplete="email" />
+
+        <label for="phone">Téléphone</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          placeholder="(+228) 90 00 00 00"
+          pattern="^\+?\d{7,15}$"
+          title="Numéro valide au format international" 
+        />
+        <div class="tooltip">Format attendu : +22890000000 ou 90000000</div>
+
+        <fieldset>
+          <legend>Type de participation *</legend>
+          <label><input type="radio" name="participation" value="presentiel" required /> Présentiel</label><br/>
+          <label><input type="radio" name="participation" value="enligne" /> En ligne</label>
+        </fieldset>
+
+        <label for="session">Choix de la session *</label>
+        <select id="session" name="session" required>
+          <option value="">-- Choisissez une session --</option>
+          <option value="html5">Formulaires HTML5</option>
+          <option value="accessibility">Accessibilité Web</option>
+        </select>
+
+        <label for="bio">Courte biographie</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Décrivez-vous en quelques mots..." maxlength="300"></textarea>
+
+        <label>
+          <input type="checkbox" name="terms" required />
+          J'accepte les conditions d'utilisation
+        </label>
+
+        <button type="submit">Envoyer l'inscription</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Conférence Numérique Togo. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
